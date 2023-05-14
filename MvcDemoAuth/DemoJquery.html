@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+   
+
+        <script src="Scripts/jquery-3.4.1.min.js"></script>
+
+</head>
+<body>
+
+    <table  id="StudentTable" border="1">
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Age</th>
+        </tr>
+        <tr><td></td><td></td><td></td> </tr>
+            
+            
+       
+    </table>
+   <script>
+      
+       function GetAllStudent() {
+           //    jQuery.support.cors = true;
+           $(document).ready(function GetAllStudent()
+           $.ajax({
+               Url: 'https://localhost:44348/Home/Students',
+               type:'GET',
+               dataType: 'json',
+               success: function (data) {
+                   var students = data;
+                   for (var i = 0; i < students.length; i++) {
+                       $("#StudentTable").append("<tr ><td>" + students[i].ID + "</td> <td>" + students[i].StudentName + "</td> </tr>");
+                   }
+               },
+               error: function (x,y,z) {
+                   alert("Erorr Data ");
+               }
+           });
+          
+       }
+       GetAllStudent();
+   </script>
+</body>
+</html>

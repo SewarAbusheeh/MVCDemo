@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <h1 style="text-align:center;"> Adding Element In RunTime </h1>
+    <div id="testdiv" style="color:blueviolet;">
+        
+    </div>
+    <form action="/" method="post">
+        number 1<input name="n1" id="n1" type="text" />
+        <br />
+        number 2<input name="n2" id="n2" type="text" />
+        <input type="button" value="sum" id="sum" name="sum"  onclick="SUM();" />
+        <br />
+
+        <span id="result"></span>
+        <h1 style="text-align:center;"> Editing or Removing Object in the DOM Element In RunTime </h1>
+    </form>
+    <script>
+        // we use DOM  to Access an element at runtime
+        var btn = document.getElementById("sum");
+        btn.addEventListener("mouseover",
+            function () {/* Window.alert('Press to sum 2 num');*/ btn.style.color = 'red'; }, false);
+        btn.addEventListener("mouseout",
+            function () {/* Window.alert('Press to sum 2 num');*/ btn.style.color = 'black'; }, false);
+            
+             
+
+            
+        function SUM() {
+            var n1 = document.getElementById("n1").value; // value => without it will not go corrct  
+            var n2 = document.getElementById("n2").value;
+            var res = parseInt(n1) + parseInt(n2); // parseInt with out it will take number as string like n1=22 ,n2=33 res =2233
+            var result = document.getElementById("result");
+            result.innerHTML = "<h2>" + res + "</h2>";    // innerHTML :html الداخلي
+        }
+
+        // the div should be befor a script 
+        var div = document.getElementById("testdiv");
+        div.innerHTML = "Here we go ";
+     
+    </script>
+
+</body>
+</html>

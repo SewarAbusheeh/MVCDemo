@@ -1,0 +1,106 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script>
+        // JS have a Built in Object Type 1-Date 2-array 3-String  4-Regular Expretion
+        
+        var arr = ["cs", "Cis", "Mis"];
+        document.write("<ol>");
+        for (var i = 0; i < arr.length; i++) {
+            document.write("<li>" + arr[i] +"</li>");
+           // document.write(arr[i]);
+        }
+        document.write("</ol>");
+        document.write("<br>");
+        document.write("<br>");
+        document.write("----------------------------------" + "<br>");
+        // Defining arrays of Object Using JSON
+        var emp = [{ // in JSON every thing is string No exist for int 
+            "name": "sewar",
+            "id" :"1"
+        },
+            {
+                "name": "Aya",
+                "id": "2"
+            }
+        ];
+        for (var i = 0; i < emp.length; i++) { // you cant print as document.write(emp [i]);
+            var E = emp[i];
+            var s= E.name;
+            document.write(s);
+        }
+        document.write("<br>");
+        document.write("----------------------------------"+"<br>");
+        var d = new Date();
+        document.write(d.toTimeString());
+        document.write("<br>");
+        document.write(Date.now("yy-mm-dd") + "<br>");
+        document.write("<br>");
+        document.write("<br>");
+        document.write("----------------------------------" + "<br>");
+        var r = new RegExp("[A-Z]OG"); //start whit [A-Z] as Capital and end with OG Capitle
+        if (r.test("DOG")) { // test :return  string 
+            document.write("true");
+        }
+
+        document.write("<br>");
+        document.write("<br>");
+        document.write("----------------------------------" + "<br>");
+        var x = 11;
+        y = 11;
+        var t = x + y;
+        document.write(t);
+        document.write("<br>");
+        function sum(x, y) {
+           
+            return   x + y;
+        }
+        document.write(sum(50,20));
+        document.write("<br>");
+        if (y == 0) {
+            alert("you  cant  divade by Zero ");
+            y = 1
+        } else {
+            alert("will change y =1 ");
+           
+        }
+   /*     the Diffrence between if and switch is
+    *     if :check more than one condation 
+    *     switch :check one var and give some cases
+    * */
+        document.write("<br>");
+        document.write("----------------------------------" + "<br>");
+        switch (y) {
+            case 10:
+                alert("y==10");
+                break;
+            case 11:
+                alert("y==11");
+                break;
+            default:
+                alert("y==12");
+                break;
+        }
+        document.write("<br>");
+        document.write("----------------------------------" + "<br>");
+        for (var i = 0; i < 5; i++) {
+            document.write("Done");
+        }
+        while (y<=20) {
+            document.write("y<=20");
+            y = y+1;
+        }
+        document.write("<br>");
+        document.write("----------------------------------" + "<br>");
+        do {
+            document.write("<br>");
+            document.write("y==100");
+        } while (y==100);
+    </script>
+</head>
+<body>
+
+</body>
+</html>
